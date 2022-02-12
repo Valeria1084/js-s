@@ -230,17 +230,34 @@ let usersList = [
         }
     }
 ];
-for(let user of usersList){
-let productDiv = document.createElement('div')
+for(let user of usersList) {
+    let productDiv = document.createElement('div')
     let idDiv = document.createElement('div')
     idDiv.innerText = `${user.id}${user.name}${user.username}${user.email}`
     productDiv.appendChild(idDiv)
     document.body.appendChild(productDiv)
 
-   for (let addres in user.address){
-let addresDiv = document.createElement('div')
-addresDiv.innerText = `${user.address} `
-        console.log(addresDiv)
+    for (let addres in user.address) {
+        let addresDiv = document.createElement('div')
+        addresDiv.innerText = `${user.address.street} ${user.address.suite}${user.address.suite}${user.address.suite}`
+        productDiv.appendChild(addresDiv)
+
+        for (let geos in user.address.geo) {
+            let geoDiv = document.createElement('div')
+            geoDiv.innerText = `${user.address.geo.lat} ${user.address.geo.lng}`
+            productDiv.appendChild(geoDiv)
+
+        }
+    }
+    let idDiv2 = document.createElement('div')
+    idDiv2.innerText = `${user.phone}${user.website}`
+    productDiv.appendChild(idDiv2)
+
+    for (let companys in user.company) {
+        let companyDiv = document.createElement('div')
+        companyDiv.innerText = `${user.company.name} ${user.company.catchPhrase}${user.company.bs}`
+        productDiv.appendChild(companyDiv)
+
     }
 }
 
