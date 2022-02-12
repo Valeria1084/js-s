@@ -1,0 +1,9 @@
+.sss{
+    display: flex;
+    column-gap:10px;
+    flex-wrap: nowrap;
+}
+.ssss{
+    width: 300px;
+    height: 300px;
+}
